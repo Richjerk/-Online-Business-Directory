@@ -1,33 +1,27 @@
 # Netlify build configuration
 [build]
-  publish = "dist"  # Folder where your build output is stored
-  command = "npm run build"  # Command to build your app
+  # Folder where your build output is stored
+  publish = "dist"  # Ensure this matches your actual build output folder
+  # Command to build your app
+  command = "npm run build"
   base = "./"  # Adjust if necessary
 
 [build.environment]
   NODE_VERSION = "20.17.0"  # Specify the Node.js version if needed
-  MONGO_URI = "your-mongo-uri"  # MongoDB URI (ensure it's secure)
+  MONGO_URI = "MONGO_URI=mongodb+srv://puseletso55:Daniel@9615@townshipbusinesschatbot.awtrt6h.mongodb.net/?retryWrites=true&w=majority&appName=TownshipBusinessChatbot"  # MongoDB URI (ensure it's secure)
 
 [functions]
-  directory = "netlify/functions"  # Folder where your Netlify functions are located
+  # Folder where your Netlify functions are located
+  directory = "netlify/functions"  # Ensure this folder exists in your project
 
 [dev]
+  # Local dev server settings
   functions = "netlify/functions"  # Local dev server settings
   autoLaunch = true
   command = "npm start"
   port = 3000
   targetPort = 4000
 
-# Single [headers] block containing all header rules (Remove duplicates)
-[headers]
-  [[headers]]
-    for = "/*"
-    [headers.values]
-      Cache-Control = "public, max-age=31536000, immutable"
-      X-Content-Type-Options = "nosniff"
-      X-Frame-Options = "DENY"
-
-# Redirect rules
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -37,3 +31,11 @@
   from = "/api/*"
   to = "http://localhost:4000/:splat"
   status = 200
+
+[headers]
+  [[headers]]
+    for = "/*"
+    [headers.values]
+      Cache-Control = "public, max-age=31536000, immutable"
+      X-Content-Type-Options = "nosniff"
+      X-Frame-Options = "DENY"
