@@ -1,18 +1,9 @@
 # Netlify build configuration
 [build]
-<<<<<<< HEAD
   # Specify the directory for the build output (e.g., if you're using Vite, this would be the build folder)
-  publish = "C:\\Users\\pusel\\township-business-directory\\.netlify\\dist"  # Local path (you can adjust this if necessary)
+  publish = "dist"  # Ensure this matches your actual build output folder
   command = "npm run build"
-  
-  # If you're using the "ui" folder for the build origin, ensure it's properly set
   base = "C:\\Users\\pusel\\township-business-directory\\.netlify"  # Local base path (adjust if needed)
-=======
-  # Specify the directory for the build output (e.g., for Vite or React, this would be the dist or build folder)
-  publish = "dist"               # Ensure this matches your actual build output folder
-  command = "npm run build"      # Adjust if your build command differs
-  base = "."                     # Set build base to the current directory
->>>>>>> dda7510 (Add new files and update configuration for deployment)
 
 [build.environment]
   # Add any environment variables here (if required)
@@ -21,11 +12,7 @@
 
 [functions]
   # Specify the folder where your Netlify functions are located
-<<<<<<< HEAD
-  directory = "C:\\Users\\pusel\\township-business-directory\\.netlify\\netlify\\functions"  # Local path (adjust if needed)
-=======
   directory = "netlify/functions"  # Ensure this folder exists in your project
->>>>>>> dda7510 (Add new files and update configuration for deployment)
 
 [dev]
   # Local dev server settings (optional)
@@ -55,4 +42,3 @@
   from = "/api/*"
   to = "http://localhost:4000/:splat"
   status = 200
-
