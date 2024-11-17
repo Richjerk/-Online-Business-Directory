@@ -8,7 +8,7 @@
 
 [build.environment]
   NODE_VERSION = "20.17.0"  # Specify the Node.js version if needed
-  MONGO_URI = "MONGO_URI=mongodb+srv://puseletso55:Daniel@9615@townshipbusinesschatbot.awtrt6h.mongodb.net/?retryWrites=true&w=majority&appName=TownshipBusinessChatbot"  # MongoDB URI (ensure it's secure)
+  MONGO_URI = "mongodb+srv://puseletso55:Daniel@9615@townshipbusinesschatbot.awtrt6h.mongodb.net/?retryWrites=true&w=majority&appName=TownshipBusinessChatbot"  # MongoDB URI (ensure it's secure)
 
 [functions]
   # Folder where your Netlify functions are located
