@@ -1,37 +1,26 @@
-headersOrigin = "config"
-redirectsOrigin = "config"
-plugins = []
-functionsDirectory = "C:\\Users\\pusel\\township-business-directory\\.netlify\\netlify\\functions"
-functionsDirectoryOrigin = "config"
-headers = []
-redirects = []
-
-[dev]
-functions = "netlify/functions"
-autoLaunch = false
-
-[functions]
-
-[functions."*"]
-
 [build]
-publish = "C:\\Users\\pusel\\township-business-directory\\.netlify\\dist"
-publishOrigin = "config"
-commandOrigin = "config"
-command = "npm run build"
-base = "C:\\Users\\pusel\\township-business-directory\\.netlify"
-functions = "C:\\Users\\pusel\\township-business-directory\\.netlify\\netlify\\functions"
+  # Specify the directory for the build output (e.g., if you're using Vite, this would be the build folder)
+  publish = "C:\\Users\\pusel\\township-business-directory\\.netlify\\dist"  # Local path (you can adjust this if necessary)
+  command = "npm run build"
+  
+  # If you're using the "ui" folder for the build origin, ensure it's properly set
+  base = "C:\\Users\\pusel\\township-business-directory\\.netlify"  # Local base path (adjust if needed)
 
 [build.environment]
+  # Add any environment variables here (if required)
 
-[build.processing]
+[functions]
+  # Specify the folder where your Netlify functions are located
+  directory = "C:\\Users\\pusel\\township-business-directory\\.netlify\\netlify\\functions"  # Local path (adjust if needed)
 
-[build.processing.css]
+[dev]
+  # Local dev server settings (optional)
+  functions = "netlify/functions"
+  autoLaunch = false
 
-[build.processing.html]
-
-[build.processing.images]
-
-[build.processing.js]
-
-[build.services]
+# Redirects and headers (if needed)
+[redirects]
+  # Add redirect rules here if necessary (e.g., URL redirects)
+  
+[headers]
+  # Add custom headers here (e.g., for caching, security)

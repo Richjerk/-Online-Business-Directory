@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
 	"siteId": "6a307b7c-33b8-4096-8c9b-e8b9ca5de43f",
 	"geolocation": {
 		"data": {
@@ -18,4 +19,7 @@
 		},
 		"timestamp": 1731842781386
 	}
+=======
+	"siteId": "3c94b010-4b4c-4699-ad00-7f9ea2a4595e"
+>>>>>>> 7ec5557 (Initial commit)
 }
