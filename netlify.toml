@@ -1,43 +1,38 @@
 # Netlify build configuration
 [build]
-  # Specify the directory for the build output (e.g., if you're using Vite, this would be the build folder)
   publish = "dist"  # Ensure this matches your actual build output folder
   command = "npm run build"
   base = "C:\\Users\\pusel\\township-business-directory\\.netlify"  # Local base path (adjust if needed)
 
 [build.environment]
-  # Add any environment variables here (if required)
-  NODE_VERSION = "20.17.0"       # Example: specify the Node.js version
-  MONGO_URI = "mongodb+srv://puseletso55:Daniel@9615@townshipbusinesschatbot.awtrt6h.mongodb.net/?retryWrites=true&w=majority&appName=TownshipBusinessChatbot"  # MongoDB URI (ensure it's secure)
+  NODE_VERSION = "20.17.0"  # Example: specify the Node.js version
+  MONGO_URI = "mongodb+srv://puseletso55:Daniel@9615@townshipbusinesschatbot.awtrt6h.mongodb.net/?retryWrites=true&w=majority&appName=TownshipBusinessChatbot"  # MongoDB URI
 
 [functions]
-  # Specify the folder where your Netlify functions are located
-  directory = "netlify/functions"  # Ensure this folder exists in your project
+  directory = "netlify/functions"  # Folder where your Netlify functions are located
 
 [dev]
-  # Local dev server settings (optional)
-  functions = "netlify/functions"   # Points to the directory for serverless functions
-  autoLaunch = true                 # Automatically open localhost in the browser
-  command = "npm start"             # Command to run your dev server (e.g., a backend or frontend server)
-  port = 3000                       # Dev server port (match your local dev server's port)
-  targetPort = 4000                 # Target app server port (backend or API server)
+  functions = "netlify/functions"  # Local dev server settings
+  autoLaunch = true
+  command = "npm start"
+  port = 3000
+  targetPort = 4000
 
-[redirects]
-  # Redirect all routes to the index.html for single-page applications (SPA)
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 
-  # Add API redirect for handling routes
+[[redirects]]
   from = "/api/*"
   to = "http://localhost:4000/:splat"
   status = 200
 
 [headers]
-  # Add custom headers for caching or security
   [[headers]]
     for = "/*"
     [headers.values]
       Cache-Control = "public, max-age=31536000, immutable"
       X-Content-Type-Options = "nosniff"
       X-Frame-Options = "DENY"
+
