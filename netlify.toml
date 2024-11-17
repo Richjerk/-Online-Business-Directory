@@ -18,7 +18,7 @@
   port = 3000
   targetPort = 4000
 
-# Only one [headers] section, with multiple [[headers]] defined inside it
+# Single [headers] block containing all header rules
 [headers]
   [[headers]]
     for = "/*"
@@ -27,6 +27,7 @@
       X-Content-Type-Options = "nosniff"
       X-Frame-Options = "DENY"
 
+# Redirect rules
 [[redirects]]
   from = "/*"
   to = "/index.html"
