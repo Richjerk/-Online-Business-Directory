@@ -1,26 +1,58 @@
+# Netlify build configuration
 [build]
+<<<<<<< HEAD
   # Specify the directory for the build output (e.g., if you're using Vite, this would be the build folder)
   publish = "C:\\Users\\pusel\\township-business-directory\\.netlify\\dist"  # Local path (you can adjust this if necessary)
   command = "npm run build"
   
   # If you're using the "ui" folder for the build origin, ensure it's properly set
   base = "C:\\Users\\pusel\\township-business-directory\\.netlify"  # Local base path (adjust if needed)
+=======
+  # Specify the directory for the build output (e.g., for Vite or React, this would be the dist or build folder)
+  publish = "dist"               # Ensure this matches your actual build output folder
+  command = "npm run build"      # Adjust if your build command differs
+  base = "."                     # Set build base to the current directory
+>>>>>>> dda7510 (Add new files and update configuration for deployment)
 
 [build.environment]
   # Add any environment variables here (if required)
+  NODE_VERSION = "20.17.0"       # Example: specify the Node.js version
+  MONGO_URI = "mongodb+srv://puseletso55:Daniel@9615@townshipbusinesschatbot.awtrt6h.mongodb.net/?retryWrites=true&w=majority&appName=TownshipBusinessChatbot"  # MongoDB URI (ensure it's secure)
 
 [functions]
   # Specify the folder where your Netlify functions are located
+<<<<<<< HEAD
   directory = "C:\\Users\\pusel\\township-business-directory\\.netlify\\netlify\\functions"  # Local path (adjust if needed)
+=======
+  directory = "netlify/functions"  # Ensure this folder exists in your project
+>>>>>>> dda7510 (Add new files and update configuration for deployment)
 
 [dev]
   # Local dev server settings (optional)
-  functions = "netlify/functions"
-  autoLaunch = false
+  functions = "netlify/functions"   # Points to the directory for serverless functions
+  autoLaunch = true                 # Automatically open localhost in the browser
+  command = "npm start"             # Command to run your dev server (e.g., a backend or frontend server)
+  port = 3000                       # Dev server port (match your local dev server's port)
+  targetPort = 4000                 # Target app server port (backend or API server)
 
-# Redirects and headers (if needed)
 [redirects]
-  # Add redirect rules here if necessary (e.g., URL redirects)
-  
+  # Redirect all routes to the index.html for single-page applications (SPA)
+  [[redirects]]
+    from = "/*"
+    to = "/index.html"
+    status = 200
+
 [headers]
-  # Add custom headers here (e.g., for caching, security)
+  # Add custom headers for caching or security
+  [[headers]]
+    for = "/*"
+    [headers.values]
+      Cache-Control = "public, max-age=31536000, immutable"
+      X-Content-Type-Options = "nosniff"
+      X-Frame-Options = "DENY"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:4000/:splat"
+  status = 200
+
