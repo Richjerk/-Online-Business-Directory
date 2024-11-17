@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Kasi Online Business Directory - Empowering local township businesses.">
+  <title>Kasi Online Business Directory</title>
+  <script src="main.js" type="module" defer></script>
+  <style>
+    body {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #f97316;
+      color: white;
+      padding: 16px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 1.875rem;
+    }
+
+    section {
+      padding: 16px;
+    }
+
+    form, .directory, .chatbot, #map-container, .contact-form {
+      background-color: white;
+      padding: 16px;
+      margin-bottom: 16px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    h2 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+    }
+
+    button {
+      background-color: #f97316;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    #geoLocationBtn {
+      background-color: #3b82f6;
+    }
+
+    footer {
+      background-color: #1f2937;
+      color: white;
+      text-align: center;
+      padding: 16px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Kasi Online Business Directory</h1>
+  </header>
+
+  <!-- Forms Section -->
+  <section id="forms">
+    <!-- Business Registration Form -->
+    <form id="businessForm" enctype="multipart/form-data">
+      <h2>Register Your Business</h2>
+
+      <label for="businessName">Business Name</label>
+      <input type="text" id="businessName" name="businessName" required />
+
+      <label for="businessDescription">Business Description</label>
+      <textarea id="businessDescription" name="businessDescription" required></textarea>
+
+      <label for="businessAddress">Business Address</label>
+      <input type="text" id="businessAddress" name="businessAddress" required />
+
+      <label for="businessPhone">Business Phone</label>
+      <input type="tel" id="businessPhone" name="businessPhone" required />
+
+      <label for="businessEmail">Business Email</label>
+      <input type="email" id="businessEmail" name="businessEmail" required />
+
+      <label for="businessImage">Upload Product/Service Image</label>
+      <input type="file" id="businessImage" name="businessImage" required />
+
+      <button type="submit">Register Business</button>
+    </form>
+
+    <!-- User Registration Form -->
+    <form id="userForm">
+      <h2>Register as a User</h2>
+
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" required />
+
+      <label for="userEmail">Email</label>
+      <input type="email" id="userEmail" name="userEmail" required />
+
+      <label for="userPhone">Phone</label>
+      <input type="tel" id="userPhone" name="userPhone" required />
+
+      <label for="location">Enable Geo-Location</label>
+      <button type="button" id="geoLocationBtn">Get Location</button>
+
+      <button type="submit">Register User</button>
+    </form>
+  </section>
+
+  <!-- Registered Businesses -->
+  <section id="directory">
+    <h2>Registered Businesses</h2>
+    <div class="directory" id="businessList">
+      <!-- Dynamically populated businesses will appear here -->
+    </div>
+  </section>
+
+  <!-- Chatbot Section -->
+  <section id="chatbot">
+    <h2>Chat with Our Assistant</h2>
+    <div class="chatbot">
+      <div id="chatWindow" style="height: 200px; overflow-y: auto; border: 1px solid #d1d5db; margin-bottom: 8px; padding: 8px;">
+        <!-- Chat messages will appear here -->
+      </div>
+      <textarea id="chatInput" placeholder="Type your message..."></textarea>
+      <button id="sendChat">Send</button>
+    </div>
+  </section>
+
+  <!-- Map Section -->
+  <section id="map">
+    <h2>Find Us on the Map</h2>
+    <div id="map-container" style="height: 400px;"></div>
+  </section>
+
+  <!-- Contact Us Section -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" id="contactForm">
+      <label for="contactName">Your Name</label>
+      <input type="text" id="contactName" name="contactName" required />
+
+      <label for="contactEmail">Your Email</label>
+      <input type="email" id="contactEmail" name="contactEmail" required />
+
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2024 Mafisa Tech Affiliate Pty Ltd. All rights reserved.
+  </footer>
+</body>
+
+</html>
+
+
+
+

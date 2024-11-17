@@ -1,0 +1,37 @@
+headersOrigin = "config"
+redirectsOrigin = "config"
+plugins = []
+functionsDirectory = "C:\\Users\\pusel\\township-business-directory\\.netlify\\netlify\\functions"
+functionsDirectoryOrigin = "config"
+headers = []
+redirects = []
+
+[dev]
+functions = "netlify/functions"
+autoLaunch = false
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "C:\\Users\\pusel\\township-business-directory\\.netlify\\dist"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+base = "C:\\Users\\pusel\\township-business-directory\\.netlify"
+functions = "C:\\Users\\pusel\\township-business-directory\\.netlify\\netlify\\functions"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
