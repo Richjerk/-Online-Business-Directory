@@ -1,12 +1,12 @@
 # Netlify build configuration
 [build]
-  publish = "dist"  # Ensure this matches your actual build output folder
-  command = "npm run build"
-  base = "C:\\Users\\pusel\\township-business-directory\\.netlify"  # Local base path (adjust if needed)
+  publish = "dist"  # Folder where your build output is stored
+  command = "npm run build"  # Command to build your app
+  base = "./"  # Adjust if necessary
 
 [build.environment]
-  NODE_VERSION = "20.17.0"  # Example: specify the Node.js version
-  MONGO_URI = "mongodb+srv://puseletso55:Daniel@9615@townshipbusinesschatbot.awtrt6h.mongodb.net/?retryWrites=true&w=majority&appName=TownshipBusinessChatbot"  # MongoDB URI
+  NODE_VERSION = "20.17.0"  # Specify the Node.js version if needed
+  MONGO_URI = "your-mongo-uri"  # MongoDB URI (ensure it's secure)
 
 [functions]
   directory = "netlify/functions"  # Folder where your Netlify functions are located
@@ -18,6 +18,15 @@
   port = 3000
   targetPort = 4000
 
+# Only one [headers] section, with multiple [[headers]] defined inside it
+[headers]
+  [[headers]]
+    for = "/*"
+    [headers.values]
+      Cache-Control = "public, max-age=31536000, immutable"
+      X-Content-Type-Options = "nosniff"
+      X-Frame-Options = "DENY"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
@@ -27,11 +36,3 @@
   from = "/api/*"
   to = "http://localhost:4000/:splat"
   status = 200
-
-[headers]
-  [[headers]]
-    for = "/*"
-    [headers.values]
-      Cache-Control = "public, max-age=31536000, immutable"
-      X-Content-Type-Options = "nosniff"
-      X-Frame-Options = "DENY"
